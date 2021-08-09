@@ -21,6 +21,7 @@ const AscendantScreen = props => {
     .collection("acendantpictures")
     .doc(risingSign)
     .collection(`${risingSign}Pics`)
+    .orderBy('creation', 'asc')
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {

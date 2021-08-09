@@ -152,6 +152,19 @@ const SignUpScreen = props => {
                 initialValue=""
                 autoCorrect={false}
               />
+              {isSignup && <View style={styles.tacContainer}>
+                <Text style={styles.tacText}>
+                  By signing up, you agree to Apstro's  
+                  <TouchableOpacity onPress={() => {props.navigation.navigate("TermsAndConditions")}}>
+                    <Text style={styles.tacHyperlink}> Terms and Conditions</Text>
+                  </TouchableOpacity>
+                    <Text> and </Text> 
+                  <TouchableOpacity onPress={() => {props.navigation.navigate("PrivacyPolicy")}}>
+                    <Text style={styles.tacHyperlink}> Privacy Policy.</Text>
+                  </TouchableOpacity>
+                </Text>
+
+              </View>}
               <View style={styles.buttonContainer}>
                 {isLoading? <ActivityIndicator color='white'/> : <MyButton
                     title={'Continue'}
@@ -159,7 +172,6 @@ const SignUpScreen = props => {
                   />}
               </View>
             </ScrollView>
-
           </View>
         </View>
         </Background>
@@ -203,7 +215,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-
+  tacText: {
+    color: 'gray',
+    alignSelf: 'flex-end',
+    fontSize: 12,
+    fontFamily: 'lexend-light',
+    textAlign: 'center'
+  },
+  tacHyperlink: {
+    color: 'pink',
+    fontSize: 12,
+    fontFamily: 'lexend-light',
+    textAlign: 'center'
+  },
+  tacContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    alignSelf: 'center',
+    padding: 15
+  }
 })
 
 export default SignUpScreen;

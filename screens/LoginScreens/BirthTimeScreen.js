@@ -3,9 +3,7 @@ import { View, Text, StyleSheet, TextInput, ScrollView, Alert, ActivityIndicator
 import { Picker } from '@react-native-community/picker'
 import Moment from 'moment';
 import 'moment-timezone';
-import { formatTimeByOffset } from '../../helpers/formatTimeByOffset';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-import * as Localization from 'expo-localization';
 import { firebase } from '@firebase/app';
 import '@firebase/firestore';
 import '@firebase/auth';

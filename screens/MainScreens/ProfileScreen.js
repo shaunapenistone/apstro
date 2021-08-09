@@ -43,29 +43,29 @@ const ProfileScreen = props => {
     getProfilePicture()
     }, [])
 
-  const getProfilePicture = () => {
-    setImageLoading(true)
-    firebase.firestore()
-    .collection("profilepics")
-    .doc(userId)
-    .collection("profilePicture")
-    .orderBy('creation', 'desc')
-    .limit(1)
-    .get()
-    .then((querySnapshot) => {
-      console.log(querySnapshot.data().downloadURL)
-        querySnapshot.forEach((doc) => {
-          let imageURL = doc.data().downloadURL
-          console.log(doc.data())
-          setImage({uri: imageURL})
+    const getProfilePicture = () => {
+      setImageLoading(true)
+      firebase.firestore()
+      .collection("profilepics")
+      .doc(userId)
+      .collection("profilePicture")
+      .orderBy('creation', 'desc')
+      .limit(1)
+      .get()
+      .then((querySnapshot) => {
+        if (querySnapshot.empty) {
+          setImageLoading(require('../../assets/images/symbols/defaultavi.png'))
           setImageLoading(false)
-      })}).catch((error) => {
-        console.log(error)
-        setImageLoading(require('../../assets/images/symbols/defaultavi.png'))
-        setImageLoading(false)
-      }
-    )
-  }
+        } else {
+          querySnapshot.forEach((doc) => {
+            let imageURL = doc.data().downloadURL
+            setImage({uri: imageURL})
+            setImageLoading(false)
+        })}}).catch((error) => {
+          console.log(error)
+        }
+      )
+    }
 
   return (
     <View style={styles.screen}>

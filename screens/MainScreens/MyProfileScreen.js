@@ -66,9 +66,6 @@ const MyProfileScreen = props => {
 
     uploadImage(result.uri);
 
-    // if (!result.cancelled) {
-    //   setImage(result.uri);
-    // }
   };
 
   const uploadImage = async (uri) => {
@@ -112,16 +109,16 @@ const MyProfileScreen = props => {
     .limit(1)
     .get()
     .then((querySnapshot) => {
-      console.log(querySnapshot.data().downloadURL)
-        querySnapshot.forEach((doc) => {
-          let imageURL = doc.data().downloadURL
-          console.log(doc.data())
-          setImage({uri: imageURL})
-          setImageLoading(false)
-      })}).catch((error) => {
-        console.log(error)
+      if (querySnapshot.empty) {
         setImageLoading(require('../../assets/images/symbols/defaultavi.png'))
         setImageLoading(false)
+      } else {
+        querySnapshot.forEach((doc) => {
+          let imageURL = doc.data().downloadURL
+          setImage({uri: imageURL})
+          setImageLoading(false)
+      })}}).catch((error) => {
+        console.log(error)
       }
     )
   }
@@ -258,10 +255,6 @@ const styles = StyleSheet.create({
   profilePic: {
     height: 165,
     width: 165,
-    // shadowOpacity: 7,
-    // shadowColor: 'white',
-    // shadowRadius: 7,
-    // shadowOffset: {width: 1, height: 3 },
     borderRadius: 100,
   },
   userHeader: {

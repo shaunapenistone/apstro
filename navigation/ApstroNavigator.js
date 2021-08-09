@@ -17,7 +17,8 @@ import SynastryReportScreen from '../screens/MainScreens/SynastryReportScreen';
 import MyProfileScreen from '../screens/MainScreens/MyProfileScreen';
 import AscendantScreen from '../screens/MainScreens/AscendantScreen';
 import SunSignCompatabilityScreen from '../screens/MainScreens/SunSignCompatibilityScreen';
-
+import TermsAndConditionsScreen from '../screens/LoginScreens/TermsAndConditionsScreen';
+import PrivacyPolicyScreens from '../screens/LoginScreens/PrivacyPolicyScreen';
 
 const ChartNavigator = createStackNavigator({
   MyPlanets: PlanetsOverViewScreen,
@@ -90,6 +91,8 @@ const ApstroNavigator = createBottomTabNavigator({
 const AuthNavigator = createStackNavigator({
   Auth: SignUpScreen,
   BirthTime: BirthTimeScreen,
+  TermsAndConditions: TermsAndConditionsScreen,
+  PrivacyPolicy: PrivacyPolicyScreens
 }, {
   headerMode: 'none',
   navigationOptions: {

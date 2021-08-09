@@ -35,10 +35,9 @@ const MyChartScreen = props => {
       ;
       getNatalData()
     }, [])
-    console.log(natalData.wheel)
 
     let homerImage = 'http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg'
-    console.log(natalData.intro)
+
     return (
     <Background>
       <Header title='Chart Overview'/>
