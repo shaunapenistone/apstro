@@ -76,12 +76,16 @@ const ProfileScreen = props => {
           navigateBack={() => {props.navigation.navigate('MyFriends')}}
         />
           <View style={styles.content}>
-          {imageLoading ? <ActivityIndicator color='white' size='large'/> : <Image 
-                source={image}
-                style={styles.profilePic}
-              />}
-            <Text style={styles.title}>{user.name}</Text>
-            <Text style={styles.username}>@{user.username}</Text>
+            <View style={styles.userHeader}>
+              {imageLoading ? <ActivityIndicator color='white' size='large'/> : <Image 
+                    source={image}
+                    style={styles.profilePic}
+                  />}
+              <View>
+                <Text style={styles.title}>{user.name}</Text>
+                <Text style={styles.username}>@{user.username}</Text>
+              </View>
+            </View>
             <View style={styles.buttons}>
               <LongButton 
                 onPress={() => props.navigation.navigate({
@@ -199,6 +203,11 @@ const styles = StyleSheet.create({
     height: 155,
     width: 155,
     borderRadius: 100
-}})
+  },
+  userHeader: {
+    justifyContent: 'space-around',
+    flexDirection: 'row'
+  }
+})
 
 export default ProfileScreen;

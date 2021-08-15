@@ -82,7 +82,6 @@ const MyProfileScreen = props => {
     .then((snapshot) => {
       snapshot.ref.getDownloadURL().then((snapshot) => {
         savePictureData(snapshot)
-        console.log(snapshot)
       })
     })
 
@@ -180,6 +179,7 @@ const MyProfileScreen = props => {
                 <Text style={styles.planetCap}>{userData.mercury} Mercury</Text>
               </View>
             </View>
+            </View> }
             <LongButton 
                 title='Log Out' 
                 onPress={() => {
@@ -191,9 +191,6 @@ const MyProfileScreen = props => {
                 title='Change Profile Picture' 
                 onPress={pickImage}
               />
-            <View style={styles.buttons}>
-            </View>
-          </View> }
     </Background>
   </View>
   )

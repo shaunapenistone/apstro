@@ -26,7 +26,10 @@ export const birthform = (name, dob, birthplace, time, username) => {
             date: dob,
             time: time,
             place_id: birthplace,
-            lang: "en"
+            lang: "en",
+            wheelSettings: {
+              "COLOR_BACKGROUND": "red"
+            }
           })
         }
       )
@@ -44,7 +47,8 @@ export const birthform = (name, dob, birthplace, time, username) => {
         resData.wheel, 
         resData.intro,
         resData.aspects,
-        resData.housecusps
+        resData.housecusps,
+        resData.zodiacPoints
         )
 
         let rising = resData.housecusps[0].signName
@@ -68,7 +72,7 @@ export const birthform = (name, dob, birthplace, time, username) => {
   }}
 
 
-  const saveDataToStorage = (planets, elements, wheelId, intro, aspects, housecusps) => {
+  const saveDataToStorage = (planets, elements, wheelId, intro, aspects, housecusps, zodiacPoints) => {
     AsyncStorage.setItem(
       'natalData',
       JSON.stringify({
@@ -77,7 +81,8 @@ export const birthform = (name, dob, birthplace, time, username) => {
         wheel: wheelId,
         intro: intro, 
         aspects: aspects,
-        housecusps: housecusps
+        housecusps: housecusps,
+        zodiacpoints: zodiacPoints
       })
     );
   };

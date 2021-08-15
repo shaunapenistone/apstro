@@ -227,6 +227,147 @@ The User declares to be aware that the Owner may be required to reveal personal 
               <Text style={styles.paragraph}>
               For operation and maintenance purposes, Apstro LTD and any third-party services may collect files that record interaction with Apstro LTD (System logs) use other Personal Data (such as the IP Address) for this purpose.
               </Text>
+              <Text style={styles.bold}>Information not contained in this policy:</Text>
+              <Text style={styles.paragraph}>
+              More details concerning the collection or processing of Personal Data may be requested from the Owner at any time. Please see the contact information at the beginning of this document.
+              </Text>
+              <Text style={styles.bold}>How “Do Not Track” requests are handled:</Text>
+              <Text style={styles.paragraph}>
+              Apstro LTD does not support “Do Not Track” requests.
+To determine whether any of the third-party services it uses honor the “Do Not Track” requests, please read their privacy policies.
+              </Text>
+              <Text style={styles.bold}>Changes to this privacy policy:</Text>
+              <Text style={styles.paragraph}>
+              The Owner reserves the right to make changes to this privacy policy at any time by notifying its Users on this page and possibly within Apstro LTD and/or - as far as technically and legally feasible - sending a notice to Users via any contact information available to the Owner. It is strongly recommended to check this page often, referring to the date of the last modification listed at the bottom. 
+Should the changes affect processing activities performed on the basis of the User’s consent, the Owner shall collect new consent from the User, where required.
+              </Text>
+              <Text style={styles.header2}>Information for Californian consumers:</Text>
+              <Text style={styles.paragraph}>
+              This part of the document integrates with and supplements the information contained in the rest of the privacy policy and is provided by the business running Apstro LTD and, if the case may be, its parent, subsidiaries and affiliates (for the purposes of this section referred to collectively as “we”, “us”, “our”).
+The provisions contained in this section apply to all Users who are consumers residing in the state of California, United States of America, according to "The California Consumer Privacy Act of 2018" (Users are referred to below, simply as “you”, “your”, “yours”), and, for such consumers, these provisions supersede any other possibly divergent or conflicting provisions contained in the privacy policy.
+This part of the document uses the term “personal information“ as it is defined in The California Consumer Privacy Act (CCPA).
+              </Text>
+              <Text style={styles.bold}>Categories of personal information collected, disclosed or sold:</Text>
+              <Text style={styles.paragraph}>
+              In this section we summarize the categories of personal information that we've collected, disclosed or sold and the purposes thereof. You can read about these activities in detail in the section titled “Detailed information on the processing of Personal Data” within this document.
+Information we collect: the categories of personal information we collect
+We have collected the following categories of personal information about you: identifiers, internet information and sensorial information.
+We will not collect additional categories of personal information without notifying you.
+              </Text>
+              <Text style={styles.bold}>How we collect information: what are the sources of the personal information we collect?:</Text>
+              <Text style={styles.paragraph}>
+              We collect the above mentioned categories of personal information, either directly or indirectly, from you when you use Apstro LTD.
+For example, you directly provide your personal information when you submit requests via any forms on Apstro LTD. You also provide personal information indirectly when you navigate Apstro LTD, as personal information about you is automatically observed and collected. Finally, we may collect your personal information from third parties that work with us in connection with the Service or with the functioning of Apstro LTD and features thereof.
+              </Text>
+              <Text style={styles.bold}>How we use the information we collect: sharing and disclosing of your personal information with third parties for a business purpose:</Text>
+              <Text style={styles.paragraph}>
+              We may disclose the personal information we collect about you to a third party for business purposes. In this case, we enter a written agreement with such third party that requires the recipient to both keep the personal information confidential and not use it for any purpose(s) other than those necessary for the performance of the agreement.
+We may also disclose your personal information to third parties when you explicitly ask or authorize us to do so, in order to provide you with our Service.
+To find out more about the purposes of processing, please refer to the relevant section of this document.
+              </Text>
+              <Text style={styles.bold}>Sale of your personal information:</Text>
+              <Text style={styles.paragraph}>
+              For our purposes, the word “sale” means any “selling, renting, releasing, disclosing, disseminating, making available, transferring or otherwise communicating orally, in writing, or by electronic means, a consumer's personal information by the business to another business or a third party, for monetary or other valuable consideration”.
+This means that, for example, a sale can happen whenever an application runs ads, or makes statistical analyses on the traffic or views, or simply because it uses tools such as social network plugins and the like.
+              </Text>
+              <Text style={styles.bold}>Sale of your personal information:</Text>
+              <Text style={styles.paragraph}>
+              For our purposes, the word “sale” means any “selling, renting, releasing, disclosing, disseminating, making available, transferring or otherwise communicating orally, in writing, or by electronic means, a consumer's personal information by the business to another business or a third party, for monetary or other valuable consideration”.
+This means that, for example, a sale can happen whenever an application runs ads, or makes statistical analyses on the traffic or views, or simply because it uses tools such as social network plugins and the like.
+              </Text>
+              <Text style={styles.bold}>Your right to opt out of the sale of personal information:</Text>
+              <Text style={styles.paragraph}>
+              You have the right to opt out of the sale of your personal information. This means that whenever you request us to stop selling your data, we will abide by your request.
+Such requests can be made freely, at any time, without submitting any verifiable request, simply by following the instructions below.
+              </Text>
+              <Text style={styles.bold}>Instructions to opt out of the sale of personal information:</Text>
+              <Text style={styles.paragraph}>
+              If you’d like to know more, or exercise your right to opt out in regard to all the sales carried out by Apstro LTD, both online and offline, you can contact us for further information using the contact details provided in this document.
+              </Text>
+              <Text style={styles.bold}>Your California privacy rights and how to exercise them:</Text>
+              <Text style={styles.bold}>The right to know and to portability:</Text>
+              <Text style={styles.paragraph}>
+              You have the right to request that we disclose to you:
+the categories and sources of the personal information that we collect about you, the purposes for which we use your information and with whom such information is shared;
+in case of sale of personal information or disclosure for a business purpose, two separate lists where we disclose:
+for sales, the personal information categories purchased by each category of recipient; and
+for disclosures for a business purpose, the personal information categories obtained by each category of recipient.
+The disclosure described above will be limited to the personal information collected or used over the past 12 months.
+If we deliver our response electronically, the information enclosed will be "portable", i.e. delivered in an easily usable format to enable you to transmit the information to another entity without hindrance – provided that this is technically feasible.
+              </Text>
+              <Text style={styles.bold}>How to exercise your rights:</Text>
+              <Text style={styles.paragraph}>
+              To exercise the rights described above, you need to submit your verifiable request to us by contacting us via the details provided in this document.
+For us to respond to your request, it’s necessary that we know who you are. Therefore, you can only exercise the above rights by making a verifiable request which must:
+provide sufficient information that allows us to reasonably verify you are the person about whom we collected personal information or an authorized representative;
+describe your request with sufficient detail that allows us to properly understand, evaluate, and respond to it.
+We will not respond to any request if we are unable to verify your identity and therefore confirm the personal information in our possession actually relates to you.
+If you cannot personally submit a verifiable request, you can authorize a person registered with the California Secretary of State to act on your behalf.
+If you are an adult, you can make a verifiable request on behalf of a minor under your parental authority.
+You can submit a maximum number of 2 requests over a period of 12 months.
+              </Text>
+              <Text style={styles.bold}>How and when we are expected to handle your request:</Text>
+              <Text style={styles.paragraph}>
+              We will confirm receipt of your verifiable request within 10 days and provide information about how we will process your request.
+We will respond to your request within 45 days of its receipt. Should we need more time, we will explain to you the reasons why, and how much more time we need. In this regard, please note that we may take up to 90 days to fulfill your request.
+Our disclosure(s) will cover the preceding 12 month period.
+Should we deny your request, we will explain you the reasons behind our denial.
+We do not charge a fee to process or respond to your verifiable request unless such request is manifestly unfounded or excessive. In such cases, we may charge a reasonable fee, or refuse to act on the request. In either case, we will communicate our choices and explain the reasons behind it.
+              </Text>
+              <Text style={styles.header2}>Definitions and legal references:</Text>
+              <Text style={styles.bold}>Personal Data (or Data):</Text>
+              <Text style={styles.paragraph}>
+              Any information that directly, indirectly, or in connection with other information — including a personal identification number — allows for the identification or identifiability of a natural person.
+              </Text>
+              <Text style={styles.bold}>Usage Data:</Text>
+              <Text style={styles.paragraph}>
+              Information collected automatically through Apstro LTD (or third-party services employed in Apstro LTD), which can include: the IP addresses or domain names of the computers utilized by the Users who use Apstro LTD, the URI addresses (Uniform Resource Identifier), the time of the request, the method utilized to submit the request to the server, the size of the file received in response, the numerical code indicating the status of the server's answer (successful outcome, error, etc.), the country of origin, the features of the browser and the operating system utilized by the User, the various time details per visit (e.g., the time spent on each page within the Application) and the details about the path followed within the Application with special reference to the sequence of pages visited, and other parameters about the device operating system and/or the User's IT environment.
+              </Text>
+              <Text style={styles.bold}>User:</Text>
+              <Text style={styles.paragraph}>
+              The individual using Apstro LTD who, unless otherwise specified, coincides with the Data Subject.
+              </Text>
+              <Text style={styles.bold}>Data Subject:</Text>
+              <Text style={styles.paragraph}>
+              The natural person to whom the Personal Data refers.
+              </Text>
+              <Text style={styles.bold}>Data Processor (or Data Supervisor):</Text>
+              <Text style={styles.paragraph}>
+              The natural or legal person, public authority, agency or other body which processes Personal Data on behalf of the Controller, as described in this privacy policy.
+              </Text>
+              <Text style={styles.bold}>User:</Text>
+              <Text style={styles.paragraph}>
+              The individual using Apstro LTD who, unless otherwise specified, coincides with the Data Subject.
+              </Text>
+              <Text style={styles.bold}>Data Controller (or Owner):</Text>
+              <Text style={styles.paragraph}>
+              The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of Personal Data, including the security measures concerning the operation and use of Apstro LTD. The Data Controller, unless otherwise specified, is the Owner of Apstro LTD.
+              </Text>
+              <Text style={styles.bold}>Apstro LTD (or this Application):</Text>
+              <Text style={styles.paragraph}>
+              The means by which the Personal Data of the User is collected and processed.
+              </Text>
+              <Text style={styles.bold}>Service:</Text>
+              <Text style={styles.paragraph}>
+              The service provided by Apstro LTD as described in the relative terms (if available) and on this site/application.
+              </Text>
+              <Text style={styles.bold}>European Union (or EU):</Text>
+              <Text style={styles.paragraph}>
+              Unless otherwise specified, all references made within this document to the European Union include all current member states to the European Union and the European Economic Area.
+              </Text>
+              <Text style={styles.bold}>Cookie:</Text>
+              <Text style={styles.paragraph}>
+              Cookies are Trackers consisting of small sets of data stored in the User's browser.
+              </Text>
+              <Text style={styles.bold}>Tracker:</Text>
+              <Text style={styles.paragraph}>
+              Tracker indicates any technology - e.g Cookies, unique identifiers, web beacons, embedded scripts, e-tags and fingerprinting - that enables the tracking of Users, for example by accessing or storing information on the User’s device.
+              </Text>
+              <Text style={styles.bold}>Legal information:</Text>
+              <Text style={styles.paragraph}>
+              This privacy statement has been prepared based on provisions of multiple legislations, including Art. 13/14 of Regulation (EU) 2016/679 (General Data Protection Regulation).
+This privacy policy relates solely to Apstro LTD, if not stated otherwise within this document.
+              </Text>
             </View>
           </ScrollView>
         </View>
@@ -250,7 +391,8 @@ const styles = StyleSheet.create({
     padding: 5
   },
   container: {
-    marginVertical: 60
+    marginVertical: 60,
+    padding: 20
   },
   background: {
     backgroundColor: Colors.opaque,
@@ -262,7 +404,7 @@ const styles = StyleSheet.create({
     height: '88%',
     alignItems: "center",
     margin: '3%',
-    overflow: 'visible'
+    overflow: 'hidden'
   },
   header2: {
     fontFamily: 'lexend-light',
