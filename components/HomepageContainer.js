@@ -1,15 +1,20 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 import Colors from '../constants/Colors';
 
 const HomepageContainer = props => {
   return (
       <View style={styles.container}>
+        
         <TouchableOpacity 
           style={{width: '100%', height: '100%'}} 
           onPress={props.onPress}
         >
+          <Image 
+            source={require('../assets/images/symbols/planetsbanner.png')}
+            style={styles.planetBanner}
+          />
           <View style={styles.textContainer}>
             <Text style={styles.title}>{props.title}</Text>
             <Text style={styles.paragraph}>{props.para}</Text>
@@ -23,15 +28,14 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.opaque,
     flex: 1,
-    height: 115,
+    height: 150,
     width: '85%',
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
     alignSelf: 'center',
-    margin: 0,
-    margin: 10
+    margin: 25,
   },
   title: {
     fontFamily: 'lexend-regular',
@@ -60,6 +64,12 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     paddingHorizontal: 10,
     flex: 1
+  },
+  planetBanner: {
+    height: 125,
+    width: 100,
+    overflow: 'visible',
+    // position: 'absolute'
   }
 })
 

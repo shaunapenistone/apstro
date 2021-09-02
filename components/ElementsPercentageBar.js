@@ -9,6 +9,8 @@ const ElementsPercentageBar = props => {
   const earthSigns = (props.elements[2]).points
   const waterSigns = (props.elements[3]).points
 
+  console.log(earthSigns)
+
   const convToPer = point => {
     return Math.floor(point / 13 * 100) + '%'
   }
@@ -69,7 +71,7 @@ const ElementsPercentageBar = props => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.opaque,
-    height: 85,
+    height: 100,
     width: '85%',
     alignSelf: 'center',
     flex: 1,

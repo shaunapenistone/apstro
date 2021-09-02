@@ -12,6 +12,7 @@ import Background from '../../components/Background';
 import HomepageContainer from '../../components/HomepageContainer';
 import ElementsPercentageBar from '../../components/ElementsPercentageBar';
 import Header from '../../components/Header'
+import ZodiacStrengthBar from '../../components/ZodiacStrengthBar';
 
 const MyChartScreen = props => {
 
@@ -37,22 +38,25 @@ const MyChartScreen = props => {
     }, [])
 
     let homerImage = 'http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg'
-    console.log(natalData.zodiacpoints)
+    console.log()
     return (
     <Background>
       <Header title='Chart Overview'/>
       { dataLoaded ? <ScrollView>
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
-          {/* <View style={styles.wheelContainer}> */}
+          {/* <View style={styles.wheelContainer}>
             <Text style={styles.chartTitle}>Your Natal Chart</Text>
             <SvgUri 
               width='100%'
               height='100%'
-              uri={natalData.wheel}
+              // uri={natalData.wheel}
             />
-          {/* </View> */}
+          </View> */}
           <ElementsPercentageBar 
             elements={natalData.elements} 
+          />
+          <ZodiacStrengthBar 
+            zodiacs={natalData.zodiacpoints}
           />
           <HomepageContainer 
             title='My Planets'
@@ -96,6 +100,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 1,
     bottom: 385
+  },
+  planetBanner: {
+    height: 125,
+    width: 100,
+    overflow: 'visible'
   }
 })
 

@@ -76,7 +76,7 @@ const ApstroNavigator = createBottomTabNavigator({
       navigationOptions: {
         title: 'My Profile',
         tabBarIcon: (tabInfo) => { 
-          return <Ionicons name="settings-outline" size={22} color='gray'/>
+          return <Ionicons name="person-outline" size={22} color='gray'/>
         }
       }
     }

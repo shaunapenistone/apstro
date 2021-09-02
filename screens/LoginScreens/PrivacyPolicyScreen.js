@@ -392,7 +392,6 @@ const styles = StyleSheet.create({
   },
   container: {
     marginVertical: 60,
-    padding: 20
   },
   background: {
     backgroundColor: Colors.opaque,

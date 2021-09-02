@@ -56,6 +56,7 @@ const AscendantScreen = props => {
               <View>
                 <Text style={styles.paragraph}>{planetDetails.houseText}</Text>
               </View>
+                <Text style={styles.header}>Celebrities with this ascendant:</Text>
               <View style={styles.celebPics}>
                 <FlatList 
                   horizontal={true}
