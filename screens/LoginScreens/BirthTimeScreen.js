@@ -51,7 +51,6 @@ const BirthTimeScreen = props => {
     }).then(response => response.json())
     .then(data => {
       if (data) {
-        console.log(data)
         setDataLoaded(true)
         let arrayOfData = data.data
         setPlacesArray(arrayOfData)

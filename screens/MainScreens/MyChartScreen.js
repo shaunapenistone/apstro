@@ -25,7 +25,6 @@ const MyChartScreen = props => {
         const natalChart = JSON.parse(natalData)
 
           if(!natalData) {
-            console.log('nothing found')
             props.navigation.navigate('BirthTime')
             return 
           }
@@ -37,21 +36,17 @@ const MyChartScreen = props => {
       getNatalData()
     }, [])
 
-    let homerImage = 'http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg'
-    console.log()
     return (
     <Background>
       <Header title='Chart Overview'/>
       { dataLoaded ? <ScrollView>
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
-          {/* <View style={styles.wheelContainer}>
+          <View style={styles.wheelContainer}>
             <Text style={styles.chartTitle}>Your Natal Chart</Text>
-            <SvgUri 
-              width='100%'
-              height='100%'
-              // uri={natalData.wheel}
+            <Image 
+              source={{uri: natalData.wheel + '"&format=png"'}}
             />
-          </View> */}
+          </View>
           <ElementsPercentageBar 
             elements={natalData.elements} 
           />

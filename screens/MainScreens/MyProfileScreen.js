@@ -183,7 +183,11 @@ const MyProfileScreen = props => {
             <LongButton 
                 title='Log Out' 
                 onPress={() => {
-                  dispatch(authActions.logout());
+                  AsyncStorage.removeItem('userData');
+                  AsyncStorage.removeItem('natalData');
+                  firebase.auth().signOut()
+                    .then(console.log('worked'))
+                    .catch((error) => alert.Alert('An error happened', error.message))
                   props.navigation.navigate('Auth')
                 }}
               />

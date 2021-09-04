@@ -1,17 +1,17 @@
-import React, { useState, useReducer, useCallback, useEffect } from 'react';
+import React, { useState, useReducer, useCallback } from 'react';
 import { 
   ScrollView, 
   View, 
   StyleSheet, 
   KeyboardAvoidingView, 
-  Button, 
   Alert, 
   Text,
   TouchableOpacity,
   ActivityIndicator
 } from 'react-native';
-import { useDispatch } from 'react-redux'
-import * as authActions from '../../redux/actions/auth'
+import * as firebase from 'firebase';
+import 'firebase/firestore';
+import AsyncStorage from '@react-native-community/async-storage'
 
 import MyInput from '../../components/MyInput';
 import Colors from '../../constants/Colors';
@@ -45,10 +45,7 @@ const formReducer = (state, action) => {
 
 const SignUpScreen = props => {
   const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState();
   const [isSignup, setIsSignup] = useState(true);
-
-  const dispatch = useDispatch();
 
   const [formState, dispatchFormState] = useReducer(formReducer, {
     inputValues: {
@@ -62,42 +59,52 @@ const SignUpScreen = props => {
     formIsValid: false
   });
 
-  useEffect(() => {
-    if (error) {
-      Alert.alert('An Error Occurred!', error, [{ text: 'Okay'}])
-    }
-  }, [error]);
+  const saveDataToStorage = (userId) => {
+    AsyncStorage.setItem(
+      'userData',
+      JSON.stringify({
+        userId: userId
+      })
+    );
+  };
 
   const authHandler = async () => {
-    let action;
-    // console.log(formState.inputValues)
-    if (isSignup) {
-      action = authActions.signup(
-        formState.inputValues.email,
-        formState.inputValues.password
-      );
+      setIsLoading(true)
+      if (isSignup) {
+          firebase.auth().createUserWithEmailAndPassword(
+            formState.inputValues.email, 
+            formState.inputValues.password
+          )
+          .then((result) => {
+            const uid = result.user.uid;
+            setIsLoading(false)
+            saveDataToStorage(uid);
+            props.navigation.navigate('BirthTime')
+          })
+          .catch((error) => {
+            Alert.alert('Please check your password and email', error.message)
+            setIsLoading(false)
+          })
     } else {
-      action = authActions.login(
+      firebase.auth().signInWithEmailAndPassword(
         formState.inputValues.email,
         formState.inputValues.password
-      );
-    }
-    setError(null)
-    setIsLoading(true)
-    try {
-      await dispatch(action)
-      isSignup ? props.navigation.navigate('BirthTime') : props.navigation.navigate('Chart')
-    } catch (err) {
-      setError(err.message)
-      setIsLoading(false)
+      )
+      .then((result) => {
+        const uid = result.user.uid;
+        setIsLoading(false)
+        saveDataToStorage(uid);
+        props.navigation.navigate('StartUp')
+      })
+      .catch((error) => {
+        Alert.alert('Please check your password and email', error.message)
+        setIsLoading(false)
+      });
     }
   };
 
   const inputChangeHandler = useCallback(
     (inputIdentifier, inputValue, inputValidity) => {
-      // console.log(inputIdentifier)
-      // console.log(inputValue)
-      // console.log(inputValidity)
       dispatchFormState({
         type: FORM_INPUT_UPDATE,
         value: inputValue,
@@ -163,8 +170,11 @@ const SignUpScreen = props => {
                     <Text style={styles.tacHyperlink}> Privacy Policy.</Text>
                   </TouchableOpacity>
                 </Text>
-
               </View>}
+              {!isSignup && <TouchableOpacity onPress={() => {props.navigation.navigate("ForgotPassword")}} >
+                  <Text style={styles.selector}>Forgotten your password?</Text>
+                </TouchableOpacity>
+              }
               <View style={styles.buttonContainer}>
                 {isLoading? <ActivityIndicator color='white'/> : <MyButton
                     title={'Continue'}
@@ -200,6 +210,12 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     fontSize: 18,
     fontFamily: 'lexend-light'
+  },
+  errorText: {
+    color: 'red',
+    marginVertical: 10,
+    fontSize: 18,
+    fontFamily: 'lexend-medium'
   },
   form: {
     justifyContent: 'center'

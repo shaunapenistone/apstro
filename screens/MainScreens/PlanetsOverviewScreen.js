@@ -42,7 +42,7 @@ const PlanetsOverViewScreen = props => {
               placementDetails={natalData.housecusps[0]}
               acendant={true}
               imagePosition='left'
-              placement='Acendant'
+              placement='Ascendant'
               image={require('../../assets/images/symbols/ascendant.png')}
               paragraph="Your ascendant represents how you're percieved and reflects your physical body, initial impressions and outward style."   
               onPress={() => {

@@ -19,6 +19,7 @@ import AscendantScreen from '../screens/MainScreens/AscendantScreen';
 import SunSignCompatabilityScreen from '../screens/MainScreens/SunSignCompatibilityScreen';
 import TermsAndConditionsScreen from '../screens/LoginScreens/TermsAndConditionsScreen';
 import PrivacyPolicyScreens from '../screens/LoginScreens/PrivacyPolicyScreen';
+import ForgotPasswordScreen from '../screens/LoginScreens/ForgotPasswordScreen';
 
 const ChartNavigator = createStackNavigator({
   MyPlanets: PlanetsOverViewScreen,
@@ -92,7 +93,8 @@ const AuthNavigator = createStackNavigator({
   Auth: SignUpScreen,
   BirthTime: BirthTimeScreen,
   TermsAndConditions: TermsAndConditionsScreen,
-  PrivacyPolicy: PrivacyPolicyScreens
+  PrivacyPolicy: PrivacyPolicyScreens,
+  ForgotPassword: ForgotPasswordScreen
 }, {
   headerMode: 'none',
   navigationOptions: {
