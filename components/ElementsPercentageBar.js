@@ -9,10 +9,10 @@ const ElementsPercentageBar = props => {
   const earthSigns = (props.elements[2]).points
   const waterSigns = (props.elements[3]).points
 
-  console.log(earthSigns)
+  let sumOfSigns = fireSigns + airSigns + earthSigns + waterSigns;
 
   const convToPer = point => {
-    return Math.floor(point / 13 * 100) + '%'
+    return Math.floor(point / sumOfSigns * 100) + '%'
   }
 
   const firePer = convToPer(fireSigns);
@@ -22,32 +22,33 @@ const ElementsPercentageBar = props => {
 
   let titleText;
   if (fireSigns > airSigns && fireSigns > earthSigns && fireSigns > waterSigns) {
-    titleText = '🔥 Your dominant element is fire 🔥'
+    titleText = '🔥 Fire is your dominant element 🔥'
   } else if (airSigns > fireSigns && airSigns > waterSigns && airSigns > earthSigns) {
-    titleText = '💨 Your dominant element is air 💨'
+    titleText = '💨 Air is your dominant element 💨'
   } else if (waterSigns > fireSigns && waterSigns > airSigns && waterSigns > earthSigns) {
-    titleText = '💧 Your dominant element is water 💧'
+    titleText = '💧 Water is your dominant element 💧'
   } else if (earthSigns > fireSigns && earthSigns > airSigns && earthSigns > waterSigns) {
-    titleText = '🌎 Your dominant element is earth 🌎'
+    titleText = '🌎 Earth is your dominant element 🌎'
   } else if (earthSigns === waterSigns && earthSigns > airSigns && earthSigns > fireSigns) {
-    titleText = '🌎Your dominant elements are earth and water💧'
+    titleText = '🌎Earth and Water are your dominant elements💧'
   } else if (earthSigns === airSigns && earthSigns > waterSigns && earthSigns > fireSigns) {
-    titleText = '🌎Your dominant elements are earth and air💨'
+    titleText = '🌎Earth and Air are your dominant elements💨'
   } else if (earthSigns === fireSigns && earthSigns > waterSigns && earthSigns > airSigns) {
-    titleText = '🌎Your dominant elements are earth and fire🔥'
+    titleText = '🌎Earth and Fire are your dominant elements🔥'
   } else if (waterSigns === fireSigns && waterSigns > earthSigns && waterSigns > airSigns) {
-    titleText = '💧Your dominant elements are water and fire🔥'
+    titleText = '💧Water and Fire are your dominant elements🔥'
   } else if (waterSigns === airSigns && waterSigns > earthSigns && waterSigns > fireSigns) {
-    titleText = '💧Your dominant elements are water and air💨'
+    titleText = '💧Water and Air are your dominant elements💨'
   } else if (airSigns === fireSigns && airSigns > waterSigns && airSigns > earthSigns) {
-    titleText = '💨Your dominant elements are air and fire🔥'
+    titleText = '💨Air and Fire are your dominant elements🔥'
   } else {
     titleText = '☯️ You have a very balanced chart ☯️'
   }
   
   return (
     <View style={styles.container}>
-        <Text style={styles.text}>{titleText}</Text>
+      <Text style={styles.title}>Elements Overview</Text>
+        <Text style={styles.header}>{titleText}</Text>
         <View style={styles.bar}>
           <View style={{...styles.fire, width: firePer}}>
           </View>
@@ -71,7 +72,7 @@ const ElementsPercentageBar = props => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.opaque,
-    height: 100,
+    height: 125,
     width: '85%',
     alignSelf: 'center',
     flex: 1,
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     height: 10,
     flexDirection: 'row',
     overflow: 'hidden',
-    width: 325,
+    width: 300,
     justifyContent: 'center',
     borderRadius: 40,
     alignContent: 'center',
@@ -154,7 +155,21 @@ const styles = StyleSheet.create({
     color: '#81ad6d',
     fontFamily: 'lexend-medium',
     fontSize: 12
-  }
+  },
+  header: {
+    fontFamily: 'lexend-light',
+    color: 'gray',
+    padding: 5,
+    fontSize: 18,
+    textAlign: 'center'
+  },
+  title: {
+    fontFamily: 'lexend-regular',
+    fontSize: 22,
+    color: 'gray',
+    alignSelf: 'center',
+    textAlign: 'center'
+  },
 })
 
 export default ElementsPercentageBar;

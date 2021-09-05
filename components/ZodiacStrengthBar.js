@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.opaque,
     width: '85%',
     alignSelf: 'center',
-    flex: 1,
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',

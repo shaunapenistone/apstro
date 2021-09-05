@@ -17,7 +17,7 @@ const HomepageContainer = props => {
           />
           <View style={styles.textContainer}>
             <Text style={styles.title}>{props.title}</Text>
-            <Text style={styles.paragraph}>{props.para}</Text>
+            <Text style={styles.h2}>{props.para}</Text>
             <Text style={styles.learn}>Press to learn more!</Text>
           </View>
         </TouchableOpacity>
@@ -66,11 +66,20 @@ const styles = StyleSheet.create({
     flex: 1
   },
   planetBanner: {
-    height: 125,
+    height: 100,
     width: 100,
     overflow: 'visible',
-    // position: 'absolute'
-  }
+    position: 'absolute',
+    bottom: 100,
+    right: 125,
+  },
+  h2: {
+    fontFamily: 'lexend-regular',
+    fontSize: 15,
+    color: 'gray',
+    alignSelf: 'center',
+    textAlign: 'center'
+  },
 })
 
 export default HomepageContainer;
