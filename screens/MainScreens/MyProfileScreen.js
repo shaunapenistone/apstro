@@ -19,8 +19,6 @@ const MyProfileScreen = props => {
   const [ image, setImage] = useState(require('../../assets/images/symbols/defaultavi.png'));
   const [ imageLoading, setImageLoading ] = useState(false)
 
-  const dispatch = useDispatch()
-
   const getUserData = async () => {
     const userData = await AsyncStorage.getItem('userData');
     let parsedData = JSON.parse(userData);
@@ -83,7 +81,9 @@ const MyProfileScreen = props => {
       snapshot.ref.getDownloadURL().then((snapshot) => {
         savePictureData(snapshot)
       })
-    })
+    }
+    )
+    getProfilePicture()
 
     const savePictureData = (downloadURL) => {
       firebase.firestore()
@@ -95,7 +95,6 @@ const MyProfileScreen = props => {
         creation: firebase.firestore.FieldValue.serverTimestamp()
       })
     }
-    getProfilePicture()
   }
 
   const getProfilePicture = () => {

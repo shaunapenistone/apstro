@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useReducer } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, Alert } from 'react-native';
+import React, { useCallback, useReducer } from 'react';
+import { View, Text, StyleSheet, ScrollView, Alert } from 'react-native';
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 

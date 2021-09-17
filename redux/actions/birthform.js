@@ -9,7 +9,6 @@ export const BIRTHFORM = 'BIRTHFORM';
 export const CLEARDATA = 'CLEARDATA';
 
 export const birthform = (name, dob, birthplace, time, username) => {
-  console.log('username at the start of birthform ' + username)
 
   return async dispatch => {
     const response = await fetch(

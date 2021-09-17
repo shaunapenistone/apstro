@@ -136,7 +136,6 @@ const ProfileScreen = props => {
                 <Text style={styles.planetCap}>{user.mercury} Mercury</Text>
               </View>
             </View>
-
           </View>
     </Background>
   </View>

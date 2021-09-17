@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, ActivityIndicator, StyleSheet, Alert } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage'
 import { useDispatch } from 'react-redux'
 import Background from '../../components/Background';
@@ -20,8 +20,9 @@ const LoadingScreen = props => {
           props.navigation.navigate('Auth');
           return 
         }
+        
         const natalData = await AsyncStorage.getItem('natalData')
-        console.log(userData.userId)
+        console.log(userData)
 
         if(!natalData) {
           firebase.firestore()
@@ -41,6 +42,7 @@ const LoadingScreen = props => {
             }
           })
           .catch((error) => {
+            console.log(error)
             alert.Alert("Please re-enter your birth time information", error.message)
             props.navigation.navigate('BirthTime')
             return
