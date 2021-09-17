@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Image, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, Image, ActivityIndicator, ScrollView } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { firebase } from '@firebase/app';
 import '@firebase/firestore';
@@ -75,6 +75,7 @@ const ProfileScreen = props => {
           backButton={true}
           navigateBack={() => {props.navigation.navigate('MyFriends')}}
         />
+        <ScrollView>
           <View style={styles.content}>
             <View style={styles.userHeader}>
               {imageLoading ? <ActivityIndicator color='white' size='large'/> : <Image 
@@ -137,6 +138,7 @@ const ProfileScreen = props => {
               </View>
             </View>
           </View>
+        </ScrollView>
     </Background>
   </View>
     )

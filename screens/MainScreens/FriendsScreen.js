@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Switch, FlatList, TouchableOpacity, Share } from 'react-native';
+import { View, Text, StyleSheet, TextInput, ScrollView, FlatList, TouchableOpacity, Share } from 'react-native';
 import { firebase } from '@firebase/app';
 import '@firebase/firestore';
 import '@firebase/auth';
@@ -91,6 +91,7 @@ const FriendsScreen = props => {
     <View style={styles.screen}>
       <Background>
         <Header title='Compatibility'/>
+        <ScrollView>
           <View style={styles.content}>
             <TextInput 
               placeholder='Search by Username'
@@ -157,6 +158,7 @@ const FriendsScreen = props => {
           </View>
           <View>
           </View>
+      </ScrollView>
     </Background>
   </View>
     )

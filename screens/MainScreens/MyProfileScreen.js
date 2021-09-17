@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Image, ActivityIndicator, } from 'react-native';
+import { View, Text, StyleSheet, Image, ActivityIndicator, ScrollView, } from 'react-native';
 import { firebase } from '@firebase/app';
 import '@firebase/firestore';
 import '@firebase/auth';
@@ -127,6 +127,7 @@ const MyProfileScreen = props => {
         <Header 
           title='My Profile'
         />
+        <ScrollView>
         {loading ? <ActivityIndicator color='white' size='large'/> :
           <View style={styles.content}>
             <View  style={styles.userHeader}>
@@ -194,6 +195,7 @@ const MyProfileScreen = props => {
                 title='Change Profile Picture' 
                 onPress={pickImage}
               />
+      </ScrollView>
     </Background>
   </View>
   )
