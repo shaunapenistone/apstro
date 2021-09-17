@@ -51,7 +51,7 @@ const AscendantScreen = props => {
                 <Text style={styles.header}>{planetDetails.signName} Ascendant</Text>
               </View>
               <View>
-                <Text style={styles.paragraph}>{planetDetails.text}</Text>
+                <Text style={styles.paragraph}>{planetDetails.text} </Text>
               </View>
               <View>
                 <Text style={styles.paragraph}>{planetDetails.houseText}</Text>
