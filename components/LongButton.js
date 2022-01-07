@@ -1,6 +1,5 @@
-import { Ionicons } from '@expo/vector-icons';
 import React from 'react'
-import { View, Button, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import Colors from '../constants/Colors'
 
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
     fontFamily: 'lexend-regular',
     flexDirection: 'row',
     width: 350,
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   text: {
     fontFamily: 'lexend-light',

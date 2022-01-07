@@ -10,63 +10,67 @@ import '@firebase/auth';
 
 const LoadingScreen = props => {
   const dispatch = useDispatch();
-  const [ firebaseData, setFirebaseData ] = useState('')
 
+  const sendDataToApi = async (name, dob, placeId, time, username) => {
+    let action = authActions.birthform(
+      name,
+      dob,
+      placeId,
+      time,
+      username
+    )
+    try {
+      await dispatch(action)
+      props.navigation.navigate('MyChart')
+    } catch (err) {
+      props.navigation.navigate('BirthTime')
+      Alert.alert('Please try again later', "Sorry that didn't work, please try again later.")
+      return
+    }
+  } 
 
   useEffect(() => {
     const tryLogin = async () => {
         const userData = await AsyncStorage.getItem('userData');
+        const userId = props.navigation.getParam('userId')
+
         if(!userData) {
           props.navigation.navigate('Auth');
           return 
         }
         
         const natalData = await AsyncStorage.getItem('natalData')
-        console.log(userData)
 
-        if(!natalData) {
+        if (natalData) {
+          props.navigation.navigate('MyChart')
+        } else {
           firebase.firestore()
-          .collection("users")
-          .doc(userData.userId)
+          .collection("users") 
+          .doc(userId)
           .get()
           .then((snapshot) => {
-            console.log(snapshot.doc())
             if (snapshot.exists) {
-              setFirebaseData(snapshot.data())
-              console.log('data found')
-            } 
-            else {
+              let userNatalData = snapshot.data()
+              sendDataToApi(
+                userNatalData.name, 
+                userNatalData.dob,
+                userNatalData.placeId,
+                userNatalData.time,
+                userNatalData.username
+              )
+            } else {
               props.navigation.navigate('BirthTime')
-              console.log('data not found')
               return
             }
           })
           .catch((error) => {
             console.log(error)
-            alert.Alert("Please re-enter your birth time information", error.message)
+            Alert.alert("Please re-enter your birth time information", error.message)
             props.navigation.navigate('BirthTime')
             return
           })
 
-          let action = authActions.birthform(
-            firebaseData.name,
-            firebaseData.date,
-            firebaseData.selectedPlace,
-            firebaseData.time,
-            firebaseData.username
-          )
-
-          try {
-            await dispatch(action)
-            props.navigation.navigate('MyChart')
-          } catch (err) {
-            props.navigation.navigate('BirthTime')
-            Alert.alert('Please try again later', "Sorry that didn't work, please try again later.")
-            return
-          }
-        }
-        props.navigation.navigate('Chart');
-        }
+        }}
       ;
       tryLogin();
     }, [dispatch])

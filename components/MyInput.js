@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   errorText: {
-    color: 'gray',
+    color: 'white',
     fontSize: 16,
     alignItems: 'center',
     fontFamily: 'lexend-regular'

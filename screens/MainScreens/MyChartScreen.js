@@ -34,23 +34,25 @@ const MyChartScreen = props => {
 
     return (
     <Background>
-      <Header title='Chart Overview'/>
-      { dataLoaded ? <ScrollView>
-          <ElementsPercentageBar 
-            elements={natalData.elements} 
-          />
-          <ZodiacStrengthBar 
-            zodiacs={natalData.zodiacpoints}
-          />
-          <ZodiacQualityBar 
-            zodiacs={natalData.planets}
-          />
-          <HomepageContainer 
-            title='My Planets'
-            para="The planets represent different parts of our psyche and depects a portrait of yourself, needs and desires."
-            onPress={() => {props.navigation.navigate('MyPlanets')}}
-          />
-      </ScrollView> : <ActivityIndicator color='white' size='large'/>}
+      <View style={styles.pageContainer}>
+        <Header title='Chart Overview'/>
+        { dataLoaded ? <ScrollView>
+            <ElementsPercentageBar 
+              elements={natalData.elements} 
+            />
+            <ZodiacStrengthBar 
+              zodiacs={natalData.zodiacpoints}
+            />
+            <ZodiacQualityBar 
+              zodiacs={natalData.planets}
+            />
+            <HomepageContainer 
+              title='My Planets'
+              para="The planets represent different parts of our psyche and depects a portrait of yourself, needs and desires."
+              onPress={() => {props.navigation.navigate('MyPlanets')}}
+            />
+        </ScrollView> : <ActivityIndicator color='white' size='large'/>}
+        </View>
       </Background>
     )
 };
@@ -60,24 +62,6 @@ const styles = StyleSheet.create({
     fontFamily: 'lexend-light',
     color: 'white',
     fontSize: 30,
-  },
-  wheel: {
-    height: 355,
-    width: 330,
-    borderRadius: 30,
-    alignSelf: 'center',
-    justifyContent: 'space-around',
-  },
-  wheelContainer: {
-    height: 385,
-    width: '85%',
-    alignSelf: 'center',
-    flex: 1,
-    borderRadius: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-    margin: 10
   },
   chartTitle: {
     fontFamily: 'lexend-light',
@@ -91,6 +75,11 @@ const styles = StyleSheet.create({
     height: 125,
     width: 100,
     overflow: 'visible'
+  },
+  pageContainer: {
+    width: '90%',
+    alignSelf: 'center',
+    flex: 1,
   }
 })
 

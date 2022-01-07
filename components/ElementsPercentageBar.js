@@ -22,27 +22,27 @@ const ElementsPercentageBar = props => {
 
   let titleText;
   if (fireSigns > airSigns && fireSigns > earthSigns && fireSigns > waterSigns) {
-    titleText = '🔥 Fire is your dominant element 🔥'
+    titleText = 'Fire is your dominant element'
   } else if (airSigns > fireSigns && airSigns > waterSigns && airSigns > earthSigns) {
-    titleText = '💨 Air is your dominant element 💨'
+    titleText = 'Air is your dominant element'
   } else if (waterSigns > fireSigns && waterSigns > airSigns && waterSigns > earthSigns) {
-    titleText = '💧 Water is your dominant element 💧'
+    titleText = 'Water is your dominant element'
   } else if (earthSigns > fireSigns && earthSigns > airSigns && earthSigns > waterSigns) {
-    titleText = '🌎 Earth is your dominant element 🌎'
+    titleText = 'Earth is your dominant element'
   } else if (earthSigns === waterSigns && earthSigns > airSigns && earthSigns > fireSigns) {
-    titleText = '🌎Earth and Water are your dominant elements💧'
+    titleText = 'Earth and Water are your dominant elements'
   } else if (earthSigns === airSigns && earthSigns > waterSigns && earthSigns > fireSigns) {
-    titleText = '🌎Earth and Air are your dominant elements💨'
+    titleText = 'Earth and Air are your dominant elements'
   } else if (earthSigns === fireSigns && earthSigns > waterSigns && earthSigns > airSigns) {
-    titleText = '🌎Earth and Fire are your dominant elements🔥'
+    titleText = 'Earth and Fire are your dominant elements'
   } else if (waterSigns === fireSigns && waterSigns > earthSigns && waterSigns > airSigns) {
-    titleText = '💧Water and Fire are your dominant elements🔥'
+    titleText = 'Water and Fire are your dominant elements'
   } else if (waterSigns === airSigns && waterSigns > earthSigns && waterSigns > fireSigns) {
-    titleText = '💧Water and Air are your dominant elements💨'
+    titleText = 'Water and Air are your dominant elements'
   } else if (airSigns === fireSigns && airSigns > waterSigns && airSigns > earthSigns) {
-    titleText = '💨Air and Fire are your dominant elements🔥'
+    titleText = 'Air and Fire are your dominant elements'
   } else {
-    titleText = '☯️ You have a very balanced chart ☯️'
+    titleText = 'You have a very balanced chart'
   }
   
   return (
@@ -73,14 +73,14 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.opaque,
     height: 125,
-    width: '85%',
+    width: '100%',
     alignSelf: 'center',
     flex: 1,
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
-    margin: 10,
+    marginBottom: 20,
   },
   bar: {
     height: 10,
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   header: {
-    fontFamily: 'lexend-light',
+    fontFamily: 'lexend-regular',
     color: 'gray',
     padding: 5,
     fontSize: 18,

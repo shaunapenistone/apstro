@@ -6,7 +6,9 @@ import Colors from '../constants/Colors'
 
 const ZodiacStrengthBar = props => {
 
-  let sortedArray = props.zodiacs.sort((a, b) => {
+  let zodiacsObject = props.zodiacs
+
+  let sortedArray = zodiacsObject.sort((a, b) => {
     if (a.strength > b.strength) {
       return -1
     }
@@ -23,24 +25,21 @@ const ZodiacStrengthBar = props => {
       <Text style={styles.title}>Strongest Signs</Text>
       <View>
         <Text style={styles.header}>🥇 {filteredArray[0].name}</Text>
-        <Text style={styles.h2}>{filteredArray[0].strength} planets in {filteredArray[0].name}</Text>
       </View>
       <View>
         <Text style={styles.header}>🥈 {filteredArray[1].name}</Text>
-        <Text style={styles.h2}>{filteredArray[1].strength} planets in {filteredArray[1].name}</Text>
       </View>
       <View>
         <Text style={styles.header}>🥉 {filteredArray[2].name}</Text>
-        <Text style={styles.h2}>{filteredArray[2].strength} planets in {filteredArray[2].name}</Text>
       </View>
     </View>
-  )
-}
+  
+  )}
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.opaque,
-    width: '85%',
+    width: '100%',
     alignSelf: 'center',
     flex: 1,
     borderRadius: 30,

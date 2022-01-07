@@ -16,7 +16,7 @@ export const birthform = (name, dob, birthplace, time, username) => {
         {
           method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
             'Accept-Encoding': 'application/json',
             'Authorization': `Bearer ${bearerAccessToken.key}`
           },
@@ -25,18 +25,15 @@ export const birthform = (name, dob, birthplace, time, username) => {
             date: dob,
             time: time,
             place_id: birthplace,
-            lang: "en",
-            wheelSettings: {
-              "COLOR_BACKGROUND": "red"
-            }
+            lang: "en"
           })
         }
       )
       if (!response.ok) {
-        Alert.alert('Please try again later', "Sorry, that didn't work. Please try again later.")
+        console.log(response)
+        Alert.alert('Please try again later', "Sorry, that didn't work. Please try again later. ")
         return 
-        
-        // throw new Error(message)
+      
       }
       const resData = await response.json();
 

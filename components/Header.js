@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'transparent',
     borderBottomWidth: 1,
     flexDirection: 'row',
+    marginVertical: 15
     },
   title: {
     color: 'white',

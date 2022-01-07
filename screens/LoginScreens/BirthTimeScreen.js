@@ -15,6 +15,7 @@ import * as authActions from '../../redux/actions/birthform'
 import Background from '../../components/Background';
 import Colors from '../../constants/Colors';
 import MyButton from '../../components/MyButton';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 const BirthTimeScreen = props => {
@@ -85,6 +86,7 @@ const BirthTimeScreen = props => {
       setDate(birthDate)
       hideDatePicker();
     };
+    
 
     const usernameValidHandler = input => {
       const search = input.toLowerCase()
@@ -199,10 +201,12 @@ const BirthTimeScreen = props => {
       props.navigation.navigate('MyChart')
     } catch (err) {
       console.log(err)
+      console.log('birth time screen error')-
       Alert.alert('Please try again later', "Sorry that didn't work, please try again later.")
       return
     }
   }
+
 
   return (
     <Background>
@@ -215,6 +219,7 @@ const BirthTimeScreen = props => {
               placeholder='Name'
               style={styles.inputContainer}
               onChangeText={onChangeName}
+              autoCorrect={false}
             />
           <View>
           <View>
@@ -222,6 +227,7 @@ const BirthTimeScreen = props => {
             <TextInput 
               placeholder='Username'
               style={styles.inputContainer}
+              autoCorrect={false}
               autoCompleteType='off'
               onChangeText={(search) => usernameValidHandler(search)}
             />
@@ -235,6 +241,7 @@ const BirthTimeScreen = props => {
               <TextInput 
                 placeholder='Search for the closest town'
                 style={styles.inputContainer}
+                autoCorrect={false}
                 onChangeText={(input) => onChangePlace(input)}
               />
               {dataLoaded && <View style={styles.pickerContainer}>

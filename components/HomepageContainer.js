@@ -6,15 +6,10 @@ import Colors from '../constants/Colors';
 const HomepageContainer = props => {
   return (
       <View style={styles.container}>
-        
         <TouchableOpacity 
           style={{width: '100%', height: '100%'}} 
           onPress={props.onPress}
         >
-          <Image 
-            source={require('../assets/images/symbols/planetsbanner.png')}
-            style={styles.planetBanner}
-          />
           <View style={styles.textContainer}>
             <Text style={styles.title}>{props.title}</Text>
             <Text style={styles.h2}>{props.para}</Text>
@@ -29,13 +24,13 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.opaque,
     flex: 1,
     height: 150,
-    width: '85%',
+    width: '100%',
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
     alignSelf: 'center',
-    margin: 25,
+    marginVertical: 15,
   },
   title: {
     fontFamily: 'lexend-regular',

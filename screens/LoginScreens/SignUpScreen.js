@@ -59,11 +59,11 @@ const SignUpScreen = props => {
     formIsValid: false
   });
 
-  const saveDataToStorage = (userId) => {
+  const saveDataToStorage = (userUID) => {
     AsyncStorage.setItem(
       'userData',
       JSON.stringify({
-        userId: userId
+        userId: userUID
       })
     );
   };
@@ -92,9 +92,13 @@ const SignUpScreen = props => {
       )
       .then((result) => {
         const uid = result.user.uid;
-        setIsLoading(false)
         saveDataToStorage(uid);
-        props.navigation.navigate('StartUp')
+        props.navigation.navigate({
+          routeName: 'StartUp',
+          params: {
+            userId: uid
+          }
+        })
       })
       .catch((error) => {
         Alert.alert('Please check your password and email', error.message)

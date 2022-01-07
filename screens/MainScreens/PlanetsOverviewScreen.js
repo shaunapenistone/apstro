@@ -97,7 +97,7 @@ const PlanetsOverViewScreen = props => {
             />
             <PlacementHolder 
               placementDetails={natalData.planets[3]}
-              paragraph='Named after the God of love and beauty, Venus represents our romantic interests and where we find comfort and pleasure'
+              paragraph='Named after the God of love and beauty, Venus represents our romantic interests and where we find comfort and pleasure.'
               imagePosition='left'
               placement='Venus'
               image={require('../../assets/images/symbols/venus.png')}
@@ -142,7 +142,7 @@ const PlanetsOverViewScreen = props => {
               paragraph='As one of the more unfortunate planets, Saturn indicates how we approach our responsibilities and point to traits we have trouble expressing.'
               imagePosition='right'
               placement='Saturn'
-              image={require('../../assets/images/symbols/venus.png')}
+              image={require('../../assets/images/symbols/saturn.png')}
               onPress={() => {
                 props.navigation.navigate({
                   routeName: 'PlanetsDetail',
@@ -184,7 +184,7 @@ const PlanetsOverViewScreen = props => {
               paragraph='Named after God of the underworld, Pluto represents renewal and rebirth and shows where we search for deeper meaning'
               imagePosition='left'
               placement='Pluto'
-              image={require('../../assets/images/symbols/venus.png')}
+              image={require('../../assets/images/symbols/pluto.png')}
               onPress={() => {
                 props.navigation.navigate({
                   routeName: 'PlanetsDetail',
@@ -223,7 +223,7 @@ const PlanetsOverViewScreen = props => {
             />
             <PlacementHolder 
               placementDetails={natalData.planets[11]}
-              paragraph="lilith text"
+              paragraph="We all have dark sides and we are confronted with them several times in our lives. The Lilith Moon represents an unconscious memory of our past, dark deeds in a previous life. In our present life, Lilith will act as a brake/blocker."
               imagePosition='right'
               placement='Lilith'
               image={require('../../assets/images/symbols/lilith.png')}
@@ -232,21 +232,6 @@ const PlanetsOverViewScreen = props => {
                   routeName: 'PlanetsDetail',
                   params: {
                     planetDetails: natalData.planets[11]
-                  }
-                })}}
-            />
-            <PlacementHolder 
-              placementDetails={natalData.housecusps[10]}
-              acendant={true}
-              paragraph="As the highest point on your chart, your Midhaven represents your public image (wether it be on social media or the general public) and describes our purpose."
-              imagePosition='left'
-              placement='Midhaven'
-              image={require('../../assets/images/symbols/midhaven.png')}
-              onPress={() => {
-                props.navigation.navigate({
-                  routeName: 'PlanetsDetail',
-                  params: {
-                    planetDetails: natalData.housecusps[10]
                   }
                 })}}
             />
@@ -270,7 +255,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    paddingVertical: 30
+    paddingVertical: 5,
+    marginTop: 30
   }
 })
 

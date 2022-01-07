@@ -6,7 +6,8 @@ import '@firebase/auth';
 
 import Background from '../../components/Background';
 import Header from '../../components/Header'
-import Colors from '../../constants/Colors'
+import Colors from '../../constants/Colors';
+import Ascendants from '../../data/AscendantText';
 
 const AscendantScreen = props => {
 
@@ -35,6 +36,34 @@ const AscendantScreen = props => {
   })
   }, [])
 
+  let ascendantSign = planetDetails.signName
+  let risingText;
+  
+  if (ascendantSign == 'Aries') {
+    risingText = Ascendants.aries
+  } else if (ascendantSign == 'Taurus') {
+    risingText = Ascendants.taurus
+  } else if (ascendantSign == 'Gemini') {
+    risingText = Ascendants.gemini
+  } else if (ascendantSign == 'Cancer') {
+    risingText = Ascendants.cancer
+  } else if (ascendantSign == 'Leo') {
+    risingText = Ascendants.leo
+  } else if (ascendantSign == 'Virgo') {
+    risingText = Ascendants.virgo
+  } else if (ascendantSign == 'Libra') {
+    risingText = Ascendants.libra
+  } else if (ascendantSign == 'Scorpio') {
+    risingText = Ascendants.scorpio
+  } else if (ascendantSign == 'Sagittarius') {
+    risingText = Ascendants.sagittarius
+  } else if (ascendantSign == 'Capricorn') {
+    risingText = Ascendants.capricorn
+  } else if (ascendantSign == 'Aquarius') {
+    risingText = Ascendants.aquarius
+  } else {
+    risingText = Ascendants.pisces
+  }
   
   return (
     <Background>
@@ -48,15 +77,9 @@ const AscendantScreen = props => {
           <ScrollView style={{width: '100%'}}>
             <View style={{flex: 1, justifyContent: 'space-between', alignItems: 'center'}}>
               <View style={styles.titleGroup}>
-                <Text style={styles.header}>{planetDetails.signName} Ascendant</Text>
+                <Text style={styles.header}>{ascendantSign} Ascendant</Text>
               </View>
-              <View>
-                <Text style={styles.paragraph}>{planetDetails.text}  </Text>
-              </View>
-              <View>
-                <Text style={styles.paragraph}>{planetDetails.houseText}</Text>
-              </View>
-                <Text style={styles.header}>Celebrities with this ascendant:</Text>
+                <Text style={styles.h2}>Celebrities with this ascendant:</Text>
               <View style={styles.celebPics}>
                 <FlatList 
                   horizontal={true}
@@ -69,6 +92,9 @@ const AscendantScreen = props => {
                     />
                   }}
                 />
+              </View>
+              <View>
+                <Text style={styles.paragraph}>{risingText}</Text>
               </View>
             </View>
           </ScrollView>
@@ -84,6 +110,13 @@ const styles = StyleSheet.create({
     fontFamily: 'lexend-regular',
     color: 'gray',
     fontSize: 25,
+    textAlign: 'center'
+  },
+  h2: {
+    fontFamily: 'lexend-regular',
+    color: 'gray',
+    fontSize: 20,
+    textAlign: 'center'
   },
   background: {
     backgroundColor: Colors.opaque,
@@ -94,18 +127,20 @@ const styles = StyleSheet.create({
     height: '95%',
     alignItems: "center",
     margin: '3%',
-    overflow: 'visible',
+    overflow: 'hidden',
   },
   paragraph: {
-    fontFamily: 'lexend-regular',
+    fontFamily: 'lexend-light',
     color: 'gray',
     fontSize: 20,
+    textAlign: 'center',
+    marginHorizontal: 5
   }, 
   titleGroup: {
     flex: 1, 
     justifyContent: 'space-between', 
     alignItems: 'center',
-    margin: 15
+    margin: 15,
   },
   ascImages: {
     height: 150,

@@ -12,7 +12,7 @@ const TermsAndConditionsScreen = props => {
     <Background>
       <View styles={styles.screen}>
         <Header 
-          title='Terms and Conditions'
+          title='Terms & Conditions'
           backButton={true}
           navigateBack={() => {props.navigation.navigate('Auth')}}
         />

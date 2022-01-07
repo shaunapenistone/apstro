@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
-    margin: 10,
+    margin: 20,
+    width: '100%'
   },
   bar: {
     height: 10,
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   header: {
-    fontFamily: 'lexend-light',
+    fontFamily: 'lexend-regular',
     color: 'gray',
     padding: 5,
     fontSize: 18,

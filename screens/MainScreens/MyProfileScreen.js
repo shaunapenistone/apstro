@@ -80,6 +80,7 @@ const MyProfileScreen = props => {
     .then((snapshot) => {
       snapshot.ref.getDownloadURL().then((snapshot) => {
         savePictureData(snapshot)
+        setImage({uri: snapshot})
       })
     }
     )
@@ -135,7 +136,7 @@ const MyProfileScreen = props => {
                 source={image}
                 style={styles.profilePic}
               />}
-              <View>
+              <View style={styles.userTags}>
                 <Text style={styles.title}>{userData.name}</Text>
                 <Text style={styles.username}>@{userData.username}</Text>
               </View>
@@ -146,7 +147,7 @@ const MyProfileScreen = props => {
                   source={require('../../assets/images/symbols/ascendant.png')}
                   style={styles.planet}
                 />
-                <Text style={styles.planetCap}>{userData.rising} Ascendant</Text>
+                <Text style={styles.planetCap}>{userData.rising} Rising</Text>
               </View>
               <View>
                 <Image 
@@ -186,9 +187,8 @@ const MyProfileScreen = props => {
                   AsyncStorage.removeItem('userData');
                   AsyncStorage.removeItem('natalData');
                   firebase.auth().signOut()
-                    .then(console.log('worked'))
+                    .then(props.navigation.navigate('Auth'))
                     .catch((error) => alert.Alert('An error happened', error.message))
-                  props.navigation.navigate('Auth')
                 }}
               />
             <LongButton 
@@ -204,12 +204,12 @@ const MyProfileScreen = props => {
 const styles = StyleSheet.create({
   content: {
     marginHorizontal: 60,
-    margin: 30
   },
   text: {
     fontFamily: 'lexend-regular',
     fontSize: 20,
-    color: 'gray'
+    color: 'gray',
+    textAlign: 'center'
   },
   container: {
     flex: 1,
@@ -240,19 +240,22 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'lexend-regular',
-    fontSize: 30,
+    fontSize: 25,
     color: 'white'
   },
   username: {
     fontFamily: 'lexend-regular',
-    fontSize: 20,
-    color: 'white'
+    fontSize: 18,
+    color: 'white',
+    textAlign: 'center',
+    alignSelf: 'center'
   },
   planetCap: {
     fontFamily: 'lexend-regular',
-    fontSize: 12,
+    fontSize: 15,
     color: 'white',
     alignSelf: 'center',  
+    padding: 5,
   },
   profilePic: {
     height: 165,
@@ -260,8 +263,14 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   userHeader: {
-    justifyContent: 'space-around',
-    flexDirection: 'row'
+    justifyContent: 'space-between',
+    alignSelf: 'center',
+    flexDirection: 'row',
+  },
+  userTags: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginHorizontal: 10
   }
 })
 

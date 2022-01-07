@@ -13,7 +13,6 @@ import LoadingScreen from '../screens/MainScreens/LoadingScreen';
 import PlanetsDetailsScreen from '../screens/MainScreens/PlanetDetailsScreen';
 import FriendsScreen from '../screens/MainScreens/FriendsScreen';
 import ProfileScreen from '../screens/MainScreens/ProfileScreen';
-import SynastryReportScreen from '../screens/MainScreens/SynastryReportScreen';
 import MyProfileScreen from '../screens/MainScreens/MyProfileScreen';
 import AscendantScreen from '../screens/MainScreens/AscendantScreen';
 import SunSignCompatabilityScreen from '../screens/MainScreens/SunSignCompatibilityScreen';
@@ -35,7 +34,6 @@ const ChartNavigator = createStackNavigator({
 const FriendsNavigator = createStackNavigator({
   MyFriends: FriendsScreen,
   Profile: ProfileScreen,
-  SynastryReport: SynastryReportScreen,
   SunSignCompatibility: SunSignCompatabilityScreen
 },
 {

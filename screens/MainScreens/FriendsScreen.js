@@ -11,7 +11,6 @@ import Background from '../../components/Background';
 import Header from '../../components/Header';
 import Colors from '../../constants/Colors';
 import BarButton from '../../components/BarButton';
-import MyButton from '../../components/MyButton';
 
 const FriendsScreen = props => {
 
@@ -58,25 +57,6 @@ const FriendsScreen = props => {
     hideDatePicker();
   };
 
-  const onShare = async () => {
-    try {
-      const result = await Share.share({
-        message: "I'm on Apstro! Add me to see our astrological compatibility",
-        url: 'www.google.com'
-      });
-      if (result.action === Share.sharedAction) {
-        if (result.activityType) {
-          // shared with activity type of result.activityType
-        } else {
-          // shared
-        }
-      } else if (result.action === Share.dismissedAction) {
-        // dismissed
-      }
-    } catch (error) {
-      alert(error.message);
-    }
-  };
 
   const confirmDateHandler = () => {
     props.navigation.navigate({
@@ -91,11 +71,11 @@ const FriendsScreen = props => {
     <View style={styles.screen}>
       <Background>
         <Header title='Compatibility'/>
-        <ScrollView>
           <View style={styles.content}>
             <TextInput 
               placeholder='Search by Username'
               style={styles.inputContainer}
+              autoCorrect={false}
               onChangeText={(search) => onSearchFriendHandler(search)}
             />
             {users && <View>
@@ -119,22 +99,6 @@ const FriendsScreen = props => {
                   )}
                 /> 
               </View>}
-              <View style={styles.buttons}>
-                <BarButton 
-                  onPress={onShare}
-                  title="Share your profile"
-                /> 
-                <BarButton 
-                  onPress={onShare}
-                  title="Invite your friend"
-                />
-              </View>
-              {/* <View>
-                <Text style={styles.title}>My Favourites</Text>
-                <View style={styles.sunCompatibility}>
-                      <Text>Test</Text>
-                </View>
-              </View> */}
               <View>
                 <Text style={styles.title}>Sun Sign Compatbility</Text>
                 <View style={styles.sunCompatibility}>
@@ -158,7 +122,6 @@ const FriendsScreen = props => {
           </View>
           <View>
           </View>
-      </ScrollView>
     </Background>
   </View>
     )
@@ -216,7 +179,8 @@ const styles = StyleSheet.create({
     color: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
+    marginVertical: 15
   },
   buttons: {
     alignItems: 'center',

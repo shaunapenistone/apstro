@@ -1,3 +1,4 @@
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBrgVKdCNsZehWkfRiPmzZr6ddHB49OYfc",
   authDomain: "apstro-8e83a.firebaseapp.com",
@@ -10,5 +11,5 @@ export const firebaseConfig = {
 };
 
 export const bearerAccessToken = {
-  key: '182285|ggTaILcYQXIxz2il5E3tMF3dJ5ijKw2K7zhLIHiI'
-}
+  key: "412684|VFe2cBE6Ye410bO1s8hI5OiRUq6tl8SGdbHygLMs"
+  }

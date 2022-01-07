@@ -17,7 +17,6 @@ const ProfileScreen = props => {
 
   const [ user, setUser ] = useState({});
   const [ currentUserId, setCurrentUserId ] = useState('');
-  const [ isCurrentUser, setIsCurrentUser ] = useState(false)
   const [ image, setImage] = useState(require('../../assets/images/symbols/defaultavi.png'));
   const [ imageLoading, setImageLoading ] = useState(false)
 
@@ -42,6 +41,15 @@ const ProfileScreen = props => {
       })
     getProfilePicture()
     }, [])
+
+    const seeCompatibilityWithUser = () => {
+      props.navigation.navigate({
+        routeName: 'SunSignCompatibility',
+        params: {
+          user: user.dob
+        }
+      })
+    }
 
     const getProfilePicture = () => {
       setImageLoading(true)
@@ -82,20 +90,16 @@ const ProfileScreen = props => {
                     source={image}
                     style={styles.profilePic}
                   />}
-              <View>
+              <View style={styles.userTags}>
                 <Text style={styles.title}>{user.name}</Text>
                 <Text style={styles.username}>@{user.username}</Text>
               </View>
             </View>
             <View style={styles.buttons}>
               <LongButton 
-                onPress={() => props.navigation.navigate({
-                  routeName: 'SynastryReport',
-                  params: {
-                    user: user
-                  }
-                })}
+                onPress={seeCompatibilityWithUser}
                 title="See Compatibility"
+                style={styles.longButton}
               />
             </View>
             <View style={styles.planets}>
@@ -104,7 +108,7 @@ const ProfileScreen = props => {
                   source={require('../../assets/images/symbols/ascendant.png')}
                   style={styles.planet}
                 />
-                <Text style={styles.planetCap}>{user.rising} Acendant</Text>
+                <Text style={styles.planetCap}>{user.rising} Rising</Text>
               </View>
               <View>
                 <Image 
@@ -148,7 +152,6 @@ const ProfileScreen = props => {
 const styles = StyleSheet.create({
   content: {
     marginHorizontal: 60,
-    margin: 60
   },
   text: {
     fontFamily: 'lexend-regular',
@@ -162,7 +165,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   buttons: {
-    flexDirection: 'row',
     justifyContent: 'center',
     alignSelf: 'center',    
     marginVertical: 15
@@ -185,29 +187,37 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'lexend-regular',
-    fontSize: 30,
+    fontSize: 25,
     color: 'white'
   },
   username: {
     fontFamily: 'lexend-regular',
-    fontSize: 20,
-    color: 'white'
+    fontSize: 18,
+    color: 'white',
+    alignSelf: 'center'
   },
   planetCap: {
     fontFamily: 'lexend-regular',
-    fontSize: 12,
+    fontSize: 15,
     color: 'white',
     alignSelf: 'center',  
-    margin: 5
+    padding: 5
   },
   profilePic: {
     height: 155,
     width: 155,
-    borderRadius: 100
+    borderRadius: 100,
+    left: 0
   },
   userHeader: {
-    justifyContent: 'space-around',
-    flexDirection: 'row'
+    justifyContent: 'space-between',
+    alignSelf: 'center',
+    flexDirection: 'row',
+  },
+  userTags: {
+    justifyContent: 'flex-end',
+    alignSelf: 'center',
+    marginHorizontal: 10
   }
 })
 

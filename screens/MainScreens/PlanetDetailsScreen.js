@@ -27,53 +27,10 @@ const PlanetDetailsScreen = props => {
     retrogradeText = 'Not in Retrograde'
   }
 
-  let planetImage;
-  switch (planetDetails.planetName) {
-    case 'Sun':
-      planetImage = require('../../assets/images/symbols/sun.png')
-      break
-    case 'Moon':
-      planetImage = require('../../assets/images/symbols/moon.png')
-      break
-    case 'Mercury':
-      planetImage = require('../../assets/images/symbols/venus.png')
-      break
-    case 'Venus':
-      planetImage = require('../../assets/images/symbols/venus2.png')
-      break
-    case 'Mars':
-      planetImage = require('../../assets/images/symbols/mars.png')
-      break
-    case 'Jupiter':
-      planetImage = require('../../assets/images/symbols/venus.png')
-      break
-    case 'Saturn':
-      planetImage = require('../../assets/images/symbols/venus.png')
-      break
-    case 'Uranus':
-      planetImage = require('../../assets/images/symbols/venus.png')
-      break
-    case 'Neptune':
-      planetImage = require('../../assets/images/symbols/venus.png')
-      break
-    case 'Pluto':
-      planetImage = require('../../assets/images/symbols/venus.png')
-      break
-    case 'Chiron':
-      planetImage = require('../../assets/images/symbols/venus.png')
-      break
-    case 'North Node':
-      planetImage = require('../../assets/images/symbols/venus.png')
-      break
-    case 'Lilith':
-      planetImage = require('../../assets/images/symbols/venus.png')
-      break
-    default: 
-      planetImage = require('../../assets/images/symbols/venus.png')
-  }
+  // removing HTML & ; tags 
+  const planetText = planetDetails.text.text.replace("<p>&nbsp;</p>", "\n").replace(/<br\s*[\/]?>/gi, "\n").replace("&nbsp;", "").replace(/(<([^>]+)>)/gi, "")
+  const planetHouseText = planetDetails.housetext.text.replace(/<br\s*[\/]?>/gi, "\n").replace("&nbsp;", "").replace(/(<([^>]+)>)/gi, "")
 
-  let signImage; 
-  
   return (
     <Background>
       <Header 
@@ -86,26 +43,23 @@ const PlanetDetailsScreen = props => {
         <View style={styles.background}>
           <ScrollView style={{width: '100%'}}>
             <View style={{flex: 1, justifyContent: 'space-between', alignItems: 'center'}}>
-              <Image 
-                source={planetImage}
-                style={styles.planetImage}
-              /> 
               <View style={styles.titleGroup}>
                 <Text style={styles.header}>{planetDetails.planetName} in {planetDetails.signName}</Text>
                 <Text style={styles.subHeader}>in the {planetDetails.housePosition}{ordinals} house</Text>
                 <Text style={styles.degrees}>{planetDetails.degrees}° • {retrogradeText} </Text>
               </View>
-              <View>
-                <Text style={styles.paragraph}>{planetDetails.text}</Text>
+              <View style={styles.textSeperator}>
+                <Text style={styles.subHeader}>{planetDetails.planetName} in {planetDetails.signName}</Text>
+                <Text style={styles.paragraph}>{planetText}</Text>
               </View>
-              <View>
-                <Text style={styles.paragraph}>{planetDetails.houseText}</Text>
+              <View style={styles.textSeperator}>
+              <Text style={styles.subHeader}>{planetDetails.planetName} in the {planetDetails.housePosition}{ordinals} house</Text>
+                <Text style={styles.paragraph}>{planetHouseText}</Text>
               </View>
             </View>
           </ScrollView>
         </View>
       </SafeAreaView>
-    
   </Background>
   )
 };
@@ -120,6 +74,7 @@ const styles = StyleSheet.create({
     fontFamily: 'lexend-regular',
     color: 'gray',
     fontSize: 20,
+    textAlign: 'center'
   },
   degrees: {
     fontFamily: 'lexend-light',
@@ -147,10 +102,11 @@ const styles = StyleSheet.create({
     height: '95%',
     alignItems: "center",
     margin: '3%',
-    overflow: 'visible',
+    overflow: 'hidden',
   },
   paragraph: {
-    fontFamily: 'lexend-regular',
+    fontFamily: 'lexend-light',
+    textAlign: 'center',
     color: 'gray',
     fontSize: 20,
   }, 
@@ -159,6 +115,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between', 
     alignItems: 'center',
     margin: 15
+  },
+  textSeperator: {
+    paddingVertical: 10,
+    paddingHorizontal: 7
   }
 })
 
